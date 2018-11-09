@@ -37,14 +37,6 @@ class Libmpeg2Conan(ConanFile):
             autotools.make(args=["-j4"])
             autotools.install()
 
-        #self.run('autoreconf -f -i')
-        #copyfile("%s/data/autotools/config.guess"%(self.cerbero_root), "%s/.auto/config.guess"%(os.getcwd()))
-        #copyfile("%s/data/autotools/config.sub"%(self.cerbero_root), "%s/.auto/config.sub"%(os.getcwd()))
-        #self.run('./configure --prefix %s/build --libdir %s/build/lib --disable-maintainer-mode'
-        #' --disable-silent-rules --enable-introspection'%(os.getcwd(),os.getcwd()))
-        #self.run('make -j4')
-        #self.run('make install')
-
     def package(self):
         if tools.os_info.is_linux:
             with tools.chdir(self.source_subfolder):
